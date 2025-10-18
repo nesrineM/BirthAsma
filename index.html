@@ -254,36 +254,17 @@ quicks.forEach(q => q.addEventListener('click', ()=>{
 }));
 
 // music
-// تأكد من أن 'PlayMusic' هو الـ ID أو الكلاس الصحيح لزر التشغيل
-// وتأكد من تعريف متغير 'musicOn'
-let audio; // المتغير الذي سيحمل كائن الصوت
-let musicOn = false; // حالة التشغيل، ابدأ بـ 'false' إذا كان لا يعمل تلقائياً
-
-// إضافة مستمع الحدث للزر
-PlayMusic.addEventListener('click', () => {
-  if (!audio) {
-    // 1. إنشاء كائن Audio جديد باستخدام الرابط النسبي للملف على GitHub
-    audio = new Audio('./ ElevenLabs_2023-10-03T12_27_51_Freya.mp3'); 
-    
-    // 2. إعداد خصائص الصوت
-    audio.loop = true; // تكرار التشغيل
-    audio.volume = 0.15; // مستوى الصوت (15%)
+playMusic.addEventListener('click', ()=>{
+  if(!audio){
+    audio = new Audio('https://soundcloud.com/user-728223487/1-2021-n?ref=clipboard&p=a&c=0&si=e8bb832200464e36b1c07370ef915f22&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
+    audio.loop = true; audio.volume = 0.15;
   }
-
-  musicOn = !musicOn; // تبديل حالة التشغيل
-
-  if (musicOn) {
-    // تشغيل الموسيقى (audio.play() تعيد وعداً، لذلك نستخدم .catch() لتجنب الأخطاء إذا رفض المتصفح التشغيل التلقائي)
-    audio.play().catch(() => {}); 
-    playMusic.textContent = '🔊 إيقاف'; 
-  } else {
-    // إيقاف الموسيقى
-    audio.pause();
-    playMusic.textContent = '🔊 تشغيل';
-  }
-
-
+  musicOn = !musicOn;
+  if(musicOn){ audio.play().catch(()=>{}); playMusic.textContent='🔊 إيقاف'; }
+  else { audio.pause(); playMusic.textContent='🔊 تشغيل'; }
 });
+
+
 
 // init
 resetPreview();
