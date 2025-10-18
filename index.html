@@ -217,7 +217,8 @@ function resetPreview(){
 function botReply(userMsg){
   let reply = canned[Math.floor(Math.random()*canned.length)];
   if(userMsg.includes('عيد')) reply = `عيد ميلاد سعيد، أسماء! ${reply}`;
-  if(userMsg.includes('كود')||userMsg.includes('كواد')) reply = 'أحب الكود! هل تفضلين JavaScript أم Python? 😂';
+  if(userMsg.includes('كود')||userMsg.includes('كواد')) reply = '  كل سنة وإنتِ أغلى واحدة في حياتي ، ربنا يخليكي ليا وما يحرمنيش من ضحكتك وجنانك 😍🎂
+';
   return reply;
 }
 function appendMessage(text, who='bot'){
