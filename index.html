@@ -258,7 +258,7 @@ quicks.forEach(q => q.addEventListener('click', ()=>{
 playMusic.addEventListener('click', ()=>{
   if(!audio){
     audio = new Audio('https://soundcloud.com/user-728223487/1-2021-n?ref=clipboard&p=a&c=0&si=e8bb832200464e36b1c07370ef915f22&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
-    audio.loop = true; audio.volume = 0.25;
+    audio.loop = true; audio.volume = 0.15;
   }
   musicOn = !musicOn;
   if(musicOn){ audio.play().catch(()=>{}); playMusic.textContent='🔊 إيقاف'; }
