@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>عيد ميلاد أسماء 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #f8def8;
+      --bg2: #efe0ff;
+      --accent1: #d946ef;
+      --accent2: #ec4899;
+      --card: rgba(255,255,255,0.9);
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Cairo',system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; min-height:100vh;
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(236,72,153,0.08), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      display:flex;align-items:center;justify-content:center;padding:20px;}
+    .screen{width:100%;max-width:980px;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(88,24,69,0.12);position:relative}
+    .confetti{position:absolute;inset:0;pointer-events:none;opacity:0.8}
+    header{display:flex;align-items:center;gap:12px;padding:18px;border-bottom:1px solid rgba(0,0,0,0.05)}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:28px;box-shadow:0 6px 18px rgba(236,72,153,0.18)}
+    h1{margin:0;font-size:20px;color:#5b2160}
+    p.lead{margin:0;color:#7b4a6b;font-size:13px}
+    .wrap{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:18px}
+    .card{background:white;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(99,36,82,0.04);}
+    .big{padding:20px;border-radius:16px}
+    button.btn{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;border:none;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .preview{min-height:140px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff3f8,#fff);border:1px dashed rgba(200,150,180,0.25);white-space:pre-line;text-align:right;font-size:15px;color:#5b2b50}
+    .small-btn{background:transparent;border:1px solid rgba(220,160,190,0.35);padding:8px;border-radius:8px;cursor:pointer}
+    .chat{display:flex;flex-direction:column;gap:8px;height:280px;overflow:auto;padding:8px}
+    .msg{max-width:78%;padding:8px;border-radius:10px}
+    .msg.bot{align-self:flex-start;background:linear-gradient(180deg,#fff0fb,#fff);color:#5b2b50;border:1px solid rgba(236,72,153,0.06)}
+    .msg.user{align-self:flex-end;background:#f3f4f6;color:#2b2b2b;border:1px solid rgba(10,10,10,0.03)}
+    input[type="text"]{padding:10px;border-radius:10px;border:1px solid rgba(200,150,180,0.2);flex:1}
+    .footer{padding:12px;border-top:1px solid rgba(0,0,0,0.04);text-align:center;color:#7b4a6b}
+    .stickers{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .sticker{font-size:22px;padding:6px;border-radius:8px;background:linear-gradient(180deg,#fff,#fff7fb);border:1px solid rgba(220,150,190,0.18);cursor:pointer}
+    .top-right-badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,0.85);padding:8px;border-radius:10px;font-weight:700;color:#6b2160}
+    .music-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:transparent;border:1px solid rgba(220,150,190,0.18);padding:6px;border-radius:8px}
+    @media (max-width:880px){ .wrap{grid-template-columns:1fr} .logo{width:56px;height:56px} }
+  </style>
+</head>
+<body>
+  <div class="screen" role="application" aria-label="موقع تهاني أسماء">
+    <svg class="confetti" viewBox="0 0 800 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1">
+          <stop offset="0" stop-color="#ffd6f0"/><stop offset="1" stop-color="#e9d5ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="800" height="400" fill="url(#g)" opacity="0.12"/>
+      <g fill="#ffb6d5" transform="translate(30,40)">
+        <circle cx="20" cy="10" r="3"/><path d="M14 10 C14 6,26 6,26 10 C26 14,20 16,20 20 C20 16,14 14,14 10" />
+      </g>
+      <g fill="#f3e8ff" transform="translate(700,60)"><rect x="0" y="0" width="4" height="4" rx="1"/></g>
+      <g fill="#ffd6f0" transform="translate(420,300)"><circle cx="0" cy="0" r="5"/></g>
+    </svg>
+
+    <div class="top-right-badge">عيد ميلاد 🎂 أسماء</div>
+
+    <header>
+      <div class="logo">أ</div>
+      <div>
+        <h1>موقع تهاني — أسماء</h1>
+        <p class="lead">مولد تهاني مجنون، بوت دردشة، وستيكرات ظريفة — صنع بحب من بطتك</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <button id="playMusic" class="music-toggle" title="تشغيل/إيقاف الموسيقى">🔊 تشغيل</button>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <main class="card big">
+        <h3 style="margin:0 0 8px 0;color:#6b2160">مولد تهاني — مجنون ورومانسي</h3>
+        <p style="color:#8b4a73;margin:0 0 12px 0">اضغطي زر التوليد أو اختاري ستيكر لتضيف نكهة مرحة.</p>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <button id="genBtn" class="btn">أنشئ تهنئة مجنونة 🎉</button>
+          <button id="copyBtn" class="small-btn">نسخ</button>
+          <button id="downloadBtn" class="small-btn">تحميل txt</button>
+          <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+            <label style="font-size:13px;color:#7b4a6b">تبديل طابع</label>
+            <button id="toggleMad" class="small-btn">مجنون</button>
+          </div>
+        </div>
+
+        <div class="preview card" id="previewArea" style="margin-top:12px"></div>
+
+        <div class="stickers" aria-hidden="false">
+          <div class="sticker" data-text="🎂💖">🎂💖</div>
+          <div class="sticker" data-text="💻☕">💻☕</div>
+          <div class="sticker" data-text="🤪✨">🤪✨</div>
+          <div class="sticker" data-text="🚀🎉">🚀🎉</div>
+          <div class="sticker" data-text="🔧💡">🔧💡</div>
+        </div>
+
+        <div style="margin-top:12px;color:#7b4a6b;font-size:13px">أضف توقيع سريع:</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button id="addSign" class="small-btn">صنع بحب من بطتك</button>
+          <button id="resetBtn" class="small-btn">إعادة تعيين</button>
+        </div>
+      </main>
+
+      <aside class="card">
+        <h4 style="margin:0 0 8px 0;color:#6b2160">بوت التهاني — دردشة</h4>
+        <div class="chat" id="chatBox" aria-live="polite">
+          <div class="msg bot">أهلاً! أنا بوت التهاني. اكتب رسالة أو اضغط اقتراح.</div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input id="userInput" type="text" placeholder="اكتب شيئًا للبوت..." aria-label="حقل الدردشة" />
+          <button id="sendBtn" class="btn" style="padding:8px 10px">أرسل</button>
+        </div>
+
+        <div style="margin-top:10px;color:#7b4a6b;font-size:13px">اقتراحات:</div>
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+          <button class="small-btn quick" data-q="هل ستفعلين مفاجأة لأسماء؟">مفاجأة</button>
+          <button class="small-btn quick" data-q="اكتب تهنئة قصيرة جدًا لأسماء">تهنئة قصيرة</button>
+          <button class="small-btn quick" data-q="ارسل كود تهنئة">كود تهنئة</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">صنع بحب من بطتك — 💻💕</div>
+  </div>
+
+<script>
+// Data
+const templates = [
+  "عزيزتي أسماء، إنّ هذا اليوم ليس مجرد تاريخ في التقويم—بل هو خطأ زمني صنعته الحياة لتسمحين لها بأن تضحك أكثر! 🎉",
+  "يا أسماء، اليوم قرّر الكون أن يصدر تحديثًا: نسخة أروع من روحك. كل عام وأنتِ برنامج لا يُغلَق أبداً! 😂💻",
+  "عيد ميلاد سعيد! لو كان العالم ملفًا، لكنتِ السطر الذي لا يتوقف عن التنفيذ مُسبّبًا سعادة لا نهائية. 🎂✨",
+  "أسماء يا أعجوبة، أنتِ سبّاقة في غرابة الأمور... فلتستمتعي بمغامرة يوم مجنون جديد! 🥳🤪",
+  "في هذا اليوم تمّ إطلاق إصدار جديد من 'أسماء'—مع إصلاحات للأحزان وإضافة مزايا ضحك لا متناهٍ. 🎁🚀"
+];
+const adjectives = ["المجنونة","الخيالية","اللامتناهية","المرحة","التي لا تُقهر"];
+const endings = [
+  "أهديكِ قهوة تدوم حتى الصباح، وكودًا يشتغل من المرّة الأولى.",
+  "لتبقي دائمًا سببًا لكل سطر يبتسم في حياتي.",
+  "لا تتوقفي عن اختيار المغامرات—وأعدك سأكون طرفًا فيها!",
+  "أنتِ الخوارزمية التي تحلّ كل المشكلات بضحكة."
+];
+const canned = [
+  "يا هلا بأسماء! هل تريدين كعكة بحجم رمز سرّي؟ 🎂🔐",
+  "نحن نبحث الآن في سجل الأخطاء: لا أخطاء، فقط ضحك متكرر 😂",
+  "اقترح: احتفال رقمي + تغذية قهوة لا نهائية = سعادة مطلقة ☕✨",
+  "تحذير: قد ينتقل مستوى الجنون من هذه الصفحة إلى الواقع! هل تستعدين؟ 🤪"
+];
+
+// Elements
+const genBtn = document.getElementById('genBtn');
+const preview = document.getElementById('previewArea');
+const copyBtn = document.getElementById('copyBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const toggleMad = document.getElementById('toggleMad');
+const stickers = document.querySelectorAll('.sticker');
+const addSign = document.getElementById('addSign');
+const resetBtn = document.getElementById('resetBtn');
+const chatBox = document.getElementById('chatBox');
+const userInput = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+const quicks = document.querySelectorAll('.quick');
+const playMusic = document.getElementById('playMusic');
+
+let madness = true;
+let currentText = templates[0];
+let audio = null;
+let musicOn = false;
+
+// Functions
+function genGreeting(){
+  const t = templates[Math.floor(Math.random()*templates.length)];
+  const a = adjectives[Math.floor(Math.random()*adjectives.length)];
+  const e = endings[Math.floor(Math.random()*endings.length)];
+  currentText = `${t}\n\nأنتِ ${a}… ${e}`;
+  preview.textContent = currentText;
+}
+function copyText(){
+  navigator.clipboard.writeText(currentText).then(()=>{
+    copyBtn.textContent = 'تم النسخ';
+    setTimeout(()=> copyBtn.textContent = 'نسخ',1200);
+  });
+}
+function downloadTxt(){
+  const blob = new Blob([currentText],"text/plain;charset=utf-8");
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'تهنئة-لأسماء.txt'; a.click();
+  URL.revokeObjectURL(url);
+}
+function toggleMadness(){
+  madness = !madness;
+  toggleMad.textContent = madness ? 'مجنون' : 'رومانسي';
+  genGreeting();
+}
+function addStickerText(txt){
+  currentText += "\n\n" + txt;
+  preview.textContent = currentText;
+}
+function addSignature(){
+  currentText += "\n\nصنع بحب من بطتك";
+  preview.textContent = currentText;
+}
+function resetPreview(){
+  currentText = templates[0];
+  preview.textContent = currentText;
+}
+function botReply(userMsg){
+  let reply = canned[Math.floor(Math.random()*canned.length)];
+  if(userMsg.includes('عيد')) reply = `عيد ميلاد سعيد، أسماء! ${reply}`;
+  if(userMsg.includes('كود')||userMsg.includes('كواد')) reply = 'أحب الكود! هل تفضلين JavaScript أم Python? 😂';
+  return reply;
+}
+function appendMessage(text, who='bot'){
+  const d = document.createElement('div');
+  d.className = 'msg ' + (who==='bot'?'bot':'user');
+  d.textContent = text;
+  chatBox.appendChild(d);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// events
+genBtn.addEventListener('click', genGreeting);
+copyBtn.addEventListener('click', copyText);
+downloadBtn.addEventListener('click', downloadTxt);
+toggleMad.addEventListener('click', toggleMadness);
+stickers.forEach(s => s.addEventListener('click', ()=> addStickerText(s.dataset.text)));
+addSign.addEventListener('click', addSignature);
+resetBtn.addEventListener('click', resetPreview);
+
+sendBtn.addEventListener('click', ()=>{
+  const txt = userInput.value.trim();
+  if(!txt) return;
+  appendMessage(txt,'user');
+  userInput.value='';
+  setTimeout(()=>{
+    const r = botReply(txt);
+    appendMessage(r,'bot');
+  }, 600);
+});
+quicks.forEach(q => q.addEventListener('click', ()=>{
+  const qtxt = q.dataset.q;
+  appendMessage(qtxt,'user');
+  setTimeout(()=> appendMessage(botReply(qtxt),'bot'), 600);
+}));
+
+// music
+playMusic.addEventListener('click', ()=>{
+  if(!audio){
+    audio = new Audio('https://cdn.pixabay.com/download/audio/2021/08/04/audio_2b1a2d7b1a.mp3?filename=happy-10731.mp3');
+    audio.loop = true; audio.volume = 0.14;
+  }
+  musicOn = !musicOn;
+  if(musicOn){ audio.play().catch(()=>{}); playMusic.textContent='🔊 إيقاف'; }
+  else { audio.pause(); playMusic.textContent='🔊 تشغيل'; }
+});
+
+// init
+resetPreview();
+</script>
+</body>
+</html>
