@@ -44,8 +44,18 @@
     @media (max-width:880px){ .wrap{grid-template-columns:1fr} .logo{width:56px;height:56px} }
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+
 </head>
-<body onload="brython()">
+<body >
+  
+
+    
+    <div id="heart-container">
+        </div>
+    
+
+
   <div class="screen" role="application" aria-label="موقع تهاني أسماء">
     <svg class="confetti" viewBox="0 0 800 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -227,20 +237,39 @@ function appendMessage(text, who='bot'){
   chatBox.appendChild(d);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
-from browser import document
-import matplotlib.pyplot as plt
-import numpy as np
+  
+        function setup() {
+          // *** التعديل الهام: إضافة .parent('heart-container') ***
+          let canvas = createCanvas(400, 400); // حجم أصغر ليتناسب مع المحتوى
+          canvas.parent('heart-container');
+          
+          background(0); // خلفية سوداء
+          angleMode(RADIANS); 
+          noFill(); 
+          stroke(255, 0, 100, 150);
+          strokeWeight(0.5); 
+          
+          translate(width / 2, height / 2 + 50);
+          
+          let scaleFactor = 15; // عامل تكبير معدل
+          
+          // حلقة الرسم
+          for (let t = 0; t < TWO_PI; t += 0.005) {
+            
+            let x = scaleFactor * (16 * pow(sin(t), 3));
+            let y = scaleFactor * (
+              - (13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t))
+            );
+            
+            line(0, 0, x, y);
+          }
+        }
 
-t = np.linspace(0, 2*np.pi, 900)
-x = 16 * np.sin(t)**3
-y = (13*np.cos(t)) - (5*np.cos(2*t)) - (2*np.cos(3*t)) - (np.cos(4*t))
-
-for i in range(len(x)):
-    plt.plot([0, x[i]], [0, y[i]], linewidth=0.4)
-
-plt.show()
+        function draw() {
+          // لا نحتاج لشيء هنا
+  }
 // events
-genBtn.addEventListener('click', genGreeting);
+gentn.addEventListener('click', genGreeting);
 copyBtn.addEventListener('click', copyText);
 downloadBtn.addEventListener('click', downloadTxt);
 toggleMad.addEventListener('click', toggleMadness);
