@@ -43,8 +43,9 @@
     .music-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:transparent;border:1px solid rgba(220,150,190,0.18);padding:6px;border-radius:8px}
     @media (max-width:880px){ .wrap{grid-template-columns:1fr} .logo{width:56px;height:56px} }
   </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
 </head>
-<body>
+<body onload="brython()">
   <div class="screen" role="application" aria-label="موقع تهاني أسماء">
     <svg class="confetti" viewBox="0 0 800 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -130,7 +131,7 @@
 <a href="https://github.com/nesrineM/BirthAsma/blob/main/heart_lines.py">
     Download Heart Python Code
 </a>
-<script>
+<script type="text/python">
 // Data
 const templates = [
   "عزيزتي أسماء، إنّ هذا اليوم ليس مجرد تاريخ في التقويم بل هو خطأ زمني صنعته الحياة لتسمحين لها بأن تضحك أكثر! 🎉",
@@ -229,7 +230,18 @@ function appendMessage(text, who='bot'){
   chatBox.appendChild(d);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
+from browser import document
+import matplotlib.pyplot as plt
+import numpy as np
 
+t = np.linspace(0, 2*np.pi, 400)
+x = 16 * np.sin(t)**3
+y = (13*np.cos(t)) - (5*np.cos(2*t)) - (2*np.cos(3*t)) - (np.cos(4*t))
+
+for i in range(len(x)):
+    plt.plot([0, x[i]], [0, y[i]], linewidth=0.4)
+
+plt.show()
 // events
 genBtn.addEventListener('click', genGreeting);
 copyBtn.addEventListener('click', copyText);
