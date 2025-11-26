@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.figure(figsize=(10,10))
+plt.figure(figsize=(50,50))
 plt.axis("equal")
 plt.axis("off")
 
