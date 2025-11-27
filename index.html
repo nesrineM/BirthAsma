@@ -48,11 +48,7 @@
 
 </head>
 <body >
-  
 
-    
-    <div id="heart-container">
-        </div>
     
 
 
@@ -238,36 +234,7 @@ function appendMessage(text, who='bot'){
   chatBox.scrollTop = chatBox.scrollHeight;
 }
   
-        function setup() {
-          // *** التعديل الهام: إضافة .parent('heart-container') ***
-          let canvas = createCanvas(400, 400); // حجم أصغر ليتناسب مع المحتوى
-          canvas.parent('heart-container');
-          
-          background(0); // خلفية سوداء
-          angleMode(RADIANS); 
-          noFill(); 
-          stroke(255, 0, 100, 150);
-          strokeWeight(0.5); 
-          
-          translate(width / 2, height / 2 + 50);
-          
-          let scaleFactor = 15; // عامل تكبير معدل
-          
-          // حلقة الرسم
-          for (let t = 0; t < TWO_PI; t += 0.005) {
-            
-            let x = scaleFactor * (16 * pow(sin(t), 3));
-            let y = scaleFactor * (
-              - (13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t))
-            );
-            
-            line(0, 0, x, y);
-          }
-        }
-
-        function draw() {
-          // لا نحتاج لشيء هنا
-  }
+        
 // events
 gentn.addEventListener('click', genGreeting);
 copyBtn.addEventListener('click', copyText);
@@ -309,5 +276,48 @@ playMusic.addEventListener('click', ()=>{
 // init
 resetPreview();
 </script>
+  <div style="width:100%; display:flex; justify-content:center; margin-top:40px;">
+  <canvas id="heartCanvas" width="400" height="400"></canvas>
+  </div>
+  <script>
+window.onload = function() {
+    const canvas = document.getElementById("heartCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.lineWidth = 0.4;
+    ctx.strokeStyle = "#d63f70";
+
+    // معادلة القلب
+    function heart(t){
+        const x = 16 * Math.pow(Math.sin(t), 3);
+        const y = 13*Math.cos(t) 
+                - 5*Math.cos(2*t) 
+                - 2*Math.cos(3*t) 
+                - Math.cos(4*t);
+        return {x, y};
+    }
+
+    let i = 0;
+    const total = 400;
+
+    function drawStep(){
+        if (i >= total) return;
+
+        let t = (Math.PI * 2) * (i / total);
+        let p = heart(t);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(p.x * 10, -p.y * 10);
+        ctx.stroke();
+
+        i++;
+        requestAnimationFrame(drawStep); // يرسم خط كل فريم لعمل أنيميشن
+    }
+
+    drawStep(); // يبدأ الرسم تلقائياً
+};
+  </script>
 </body>
 </html>
